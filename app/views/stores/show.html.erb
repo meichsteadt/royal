@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="box">
+      <div class="col-lg-12">
+        <hr>
+        <h2 class="intro-text text-center">Contact
+            <strong><%= @store.name %></strong>
+        </h2>
+        <hr>
+      </div>
+      <div class="col-md-12 text-center">
+        <p>Phone:
+            <strong><%= @store.phone %></strong>
+        </p>
+        <p>Email:
+            <strong><a href="<%= @store.email %>"><%= @store.email %></a></strong>
+        </p>
+        <p>Address:
+            <strong><%= @store.address%></strong>
+        </p>
+        <p>Hours:
+            <strong><%= @store.hours %></strong>
+        </p>
+        <% if @store.facebook? %>
+          <a href="https://<%= @store.facebook %>"><i class="fa fa-facebook-square fa-3x"></i></a>
+        <% end %>
+        <% if @store.instagram? %>
+            <a href="https://<%= @store.instagram %>"><i class="fa fa-instagram fa-3x"></i></a>
+        <% end %>
+        <% if @store.twitter? %>
+          <a href="https://<%= @store.twitter %>"><i class="fa fa-twitter-square fa-3x"></i></a>
+        <% end %>
+        <% if @store.pinterest? %>
+          <a href="https://<%= @store.pinterest %>"><i class="fa fa-pinterest fa-3x"></i></a>
+        <% end %>
+      </div>
+      <div class="clearfix"></div>
+      <br>
+      <div class="col-md-8 col-md-offset-2">
+          <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12685.018666418448!2d-120.5938016!3d37.3601506!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xaf4cec971eccaa1e!2sBianca&#39;s+Furniture!5e0!3m2!1sen!2sus!4v1500344395662" width="100%" height="550" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+<!-- /.container -->
