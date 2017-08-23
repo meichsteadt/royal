@@ -3,7 +3,7 @@ class LayoutsController < ApplicationController
   # GET /layouts
   # GET /layouts.json
   def index
-    @store = Store.first
-    @slideshow = [Product.find(216).image, Product.find(6).image, Product.find(10).image]
+    @store = Store.new(name: "store", id: 1)
+    @slideshow = ["https://www.homelegance.com/wp-content/uploads/2017/03/2042-1-750x500.jpg"]
   end
 end

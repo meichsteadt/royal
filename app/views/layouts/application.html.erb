@@ -14,7 +14,6 @@
     <div class="page">
       <div class="logo">
         <div class="brand"><%= link_to @store.name, '/' %></div>
-        <div class="address-bar" id="address"><%= @store.address %> | <%= @store.phone %></div>
         <!-- Navigation -->
         <nav class="navbar navbar-default" role="navigation">
           <div class="container">
@@ -48,13 +47,7 @@
       <%= yield %>
 
       <footer>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 text-center">
-              <p><%= @store.name %> &copy; <%= Date.today.year %></p>
-            </div>
-          </div>
-        </div>
+        <p><%= @store.name %> &copy; <%= Date.today.year %></p>
       </footer>
     </div>
   </body>
