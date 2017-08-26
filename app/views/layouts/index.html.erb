@@ -1,4 +1,4 @@
-<div class="container">
+
   <div id="carousel-example-generic" class="carousel slide">
     <!-- Indicators -->
     <ol class="carousel-indicators hidden-xs">
@@ -8,25 +8,31 @@
     </ol>
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
-      <% @slideshow.each_with_index do |image, index| %>
-      <% if index == 0 %>
       <div class="item active">
-        <div class="col-sm-4">
-          <img class="" src="<%= image %>" alt="">
+        <div class="col-xs-4 product-slide">
+          <img class="" src="<%= @slideshow[0].image %>" alt="">
         </div>
-        <div class="col-sm-4 promo">
-          <p>hi</p>
+        <div class="col-xs-4">
+          <div class="cover"></div>
+          <div class="promo">
+            <img src="http://www.mentalhealthamerica.net/sites/default/files/styles/interior_page_banner/public/BackToSchoolHeader.png?itok=ehkyBAet" alt="" style="padding: 10px;" class="img-responsive">
+            <h3>New year, <strong>New bedroom</strong></h3>
+            <%= link_to '/bedroom' do %>
+            <button class="promo-button">Shop Now</button>
+            <% end %>
+          </div>
         </div>
-        <div class="col-sm-4">
-          <img class="" src="<%= image %>" alt="">
+        <div class="col-xs-4 product-slide">
+          <img class="flip" src="<%= @slideshow[1].image %>" alt="">
         </div>
       </div>
-      <% else %>
-      <div class="item">
-        <img class="img-responsive img-full" src="<%= image %>" alt="">
-      </div>
-      <%end %>
-      <% end %>
+        <div class="item mattress-quiz">
+          <%= link_to quiz_index_path do %>
+          <h2>Find your perfect mattress in minutes</h2>
+          <!-- <button class="promo-button">Take our quiz</button> -->
+          <img class="" src="https://www.goodbed.com/media/pictures/mattresses/serta/serta-picture-30.jpg" alt="">
+          <% end %>
+        </div>
     </div>
     <!-- Controls -->
     <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -37,30 +43,23 @@
     </a>
   </div>
 
+<div class="box" style="margin-top: 40px;">
+  <div class="col-lg-12 text-center">
+    <hr>
+    <h2 class="brand-before">
+      <small>Welcome to</small>
+    </h2>
+    <h1 class="brand-name"><%= @store.name %></h1>
+    <hr class="tagline-divider">
+  </div>
+  <div class="col-md-6">
+    <img class="img-responsive img-border-left shadow img-full" src="<%= @store.store_image %>" alt="<%= @store.name %> Logo" >
+  </div>
+  <div class="col-md-6">
+    <p><%= @store.store_copy %></p>
+  </div>
+  <div class="clearfix"></div>
 </div>
-
-
-
-
-        <!-- <h2 class="brand-before">
-            <small>Welcome to</small>
-        </h2>
-        <h1 class="brand-name"><%= @store.name %></h1>
-        <hr class="tagline-divider">
-     <div class="col-lg-12">
-       <hr>
-       <h2 class="intro-text text-center">About
-           <strong><%= @store.name %></strong>
-       </h2>
-       <hr>
-     </div>
-     <div class="col-md-6">
-       <img class="img-responsive img-border-left shadow img-full" src="<%= @store.store_image %>" alt="<%= @store.name %> Logo" >
-     </div>
-     <div class="col-md-6">
-       <p><%= @store.store_copy %></p>
-     </div>
-     <div class="clearfix"></div> -->
 
 <!-- Script to Activate the Carousel -->
 <script>

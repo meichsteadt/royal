@@ -6,17 +6,20 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'casual', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <% stylesheet_link_tag 'agency', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
   </head>
 
   <body>
     <div class="page">
       <div class="logo">
         <div class="brand"><%= link_to @store.name, '/' %></div>
+        <div class="address-bar" id="address"><%= @store.address %> | <%= @store.phone %></div>
         <!-- Navigation -->
         <nav class="navbar navbar-default" role="navigation">
-          <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -32,14 +35,35 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
                 <li><a href="/">Home</a></li>
-                <li><%= link_to 'Dining', dinings_path() %></li>
-                <li><%= link_to 'Living Room', seatings_path() %></li>
-                <li><%= link_to 'Bedroom', bedrooms_path() %></li>
-                <li><%= link_to 'Contact', store_path(@store) %></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Furniture<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><%= link_to 'Dining', '/dining' %></li>
+                    <li><%= link_to 'Living Room', '/seating' %></li>
+                    <li><%= link_to 'Bedroom', '/bedroom' %></li>
+                    <li><%= link_to 'Mattresses', mattresses_path %></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Brands<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <% Brand.all.each do |brand| %>
+                    <li><%= link_to brand.name, brand_path(brand) %></li>
+                    <% end %>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Promotions<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <% Promotion.all.each do |promo| %>
+                    <li><%= link_to promo.name, manufacturer_path(promo) %></li>
+                    <% end %>
+                  </ul>
+                </li>
+                <li><%= link_to 'Contact', '/contact' %></li>
               </ul>
             </div>
             <!-- /.navbar-collapse -->
-          </div>
           <!-- /.container -->
         </nav>
       </div>

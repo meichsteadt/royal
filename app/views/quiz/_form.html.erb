@@ -1,0 +1,54 @@
+<%= form_tag do %>
+  <div class="form-group">
+    <%= label_tag :size, "What size of mattress are you looking for?" %>
+    <%= select_tag :size, options_for_select([["Twin", 0], ["Twin XL", 1], ["Full", 1],["Queen", 2], ["Eastern King", 3], ["California King", 4]]) %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :price, "What is your price range?" %>
+    <%= select_tag :price, options_for_select([["$99-$399", 0], ["$400-$799", 1], ["$800-$1199", 1],["$1200-$1699", 2], ["$1799-$2499", 3], ["$2500+", 4]]) %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :brand, "Do you have a certain brand in mind?"%>
+    <%= select_tag :brand, options_for_select(@brands.collect{|brand| [brand.name, brand.id]}) %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :mattress_age, "How old is your current mattress?" %>
+    <%= select_tag :mattress_age, options_for_select((0..9).to_a.push(["10+", 10])) %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :softness, "Which feel do you prefer?" %>
+    <%= select_tag :softness, options_for_select([["soft", 0], ["medium", 1], ["firm", 2]]) %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :sleep_type, "Are you a side, back, or stomach sleeper?" %>
+    <%= select_tag :sleep_type, options_for_select([["side", 0], ["stomach", 1], ["back", 1]]) %>
+  </div>
+
+
+  <div class="form-group">
+    <%= label_tag :memory_foam, "Are you looking for a memory foam mattress?" %>
+    <%= select_tag :memory_foam, options_for_select([["no", 0], ["yes", 1]]) %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :motion, "How important is it for your mattress to not transfer motion when you or your partner move?" %>
+    <%= select_tag :motion, options_for_select([["not important", 0], ["somewhat important", 1], ["very important", 1]]) %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :natural, "How important is it for your mattress to contain only natural products?" %>
+    <%= select_tag :natural, options_for_select([["not important", 0], ["somewhat important", 1], ["very important", 1]]) %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :adjustable, "How important is it for your mattress to be adjustable?" %>
+    <%= select_tag :adjustable, options_for_select([["not important", 0], ["somewhat important", 1], ["very important", 1]]) %>
+  </div>
+
+  <%= submit_tag "Find my mattress", class: "promo-button" %>
+<% end %>

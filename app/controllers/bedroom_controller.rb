@@ -1,4 +1,4 @@
-class BedroomsController < ApplicationController
+class BedroomController < ApplicationController
   def index
     session[:category] = "bedroom"
     redirect_to products_path

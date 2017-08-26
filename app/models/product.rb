@@ -1,4 +1,8 @@
 class Product < ApplicationRecord
+  def sale
+    true
+  end
+
   def self.get_products
     products = RestClient.get("http://localhost:3000/products?client_id=test&client_secret=password")
     JSON.parse(products).each do |product|

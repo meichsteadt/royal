@@ -10,10 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170718021724) do
+ActiveRecord::Schema.define(version: 20170826225125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "brands", force: :cascade do |t|
+    t.string   "name"
+    t.string   "image"
+    t.string   "video"
+    t.string   "logo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "category"
+  end
+
+  create_table "emails", force: :cascade do |t|
+    t.string   "email"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mattresses", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "manufacturer_id"
+    t.integer  "price"
+    t.string   "features",         default: [],              array: true
+    t.string   "image"
+    t.string   "description"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "firmness"
+    t.integer  "warranty_length"
+    t.string   "warranty_details"
+    t.string   "sizes",            default: [],              array: true
+    t.integer  "brand_id"
+    t.string   "components",       default: [],              array: true
+    t.boolean  "adjustable"
+  end
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
@@ -22,6 +57,21 @@ ActiveRecord::Schema.define(version: 20170718021724) do
     t.string   "image"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "promotions", force: :cascade do |t|
+    t.string   "name"
+    t.date     "end_date"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "searches", force: :cascade do |t|
+    t.integer "min"
+    t.integer "max"
+    t.string  "size"
+    t.string  "features"
   end
 
   create_table "stores", force: :cascade do |t|

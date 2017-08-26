@@ -1,11 +1,11 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show]
-  before_action :set_store
 
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @category = params[:category]
+    @products = Product.where(category: @category)
   end
 
   # GET /products/1
@@ -17,9 +17,5 @@ class ProductsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
-    end
-
-    def set_store
-      @store = Store.first
     end
 end
