@@ -17,6 +17,7 @@
  @import "bootstrap";
 
 $color1: rgba(255,255,255,.9);
+$teal: #13ACB1;
 $carouselHeight: 500px;
 
  html {
@@ -28,11 +29,6 @@ $carouselHeight: 500px;
      height: 100%;
      min-height: 100vh;
      background: #fafafa;
-    //  background: url('https://firebasestorage.googleapis.com/v0/b/images-6f454.appspot.com/o/bg.jpg?alt=media&token=b18120d6-4dee-478a-b8ba-3cafbb006aed') no-repeat center center fixed;
-    //  -webkit-background-size: cover;
-    //  -moz-background-size: cover;
-    //  background-size: cover;
-    //  -o-background-size: cover;
      height: 100%;
      position: relative;
      padding-bottom: 50px;
@@ -417,16 +413,22 @@ $carouselHeight: 500px;
    height: 360px;
    overflow: hidden;
    box-sizing: border-box;
+   .safe-zone {
+     width: 100%;
+     height: 100%;
+     position: relative;
+     overflow: hidden;
+   }
    .image {
      width: 100%;
      height: 100%;
      position: absolute;
+     transition: transform .4s ease;
    }
    .info {
     background-color: rgba(255,255,255,0.8);
     width: 100%;
     padding: 0 10px;
-    text-align: center;
     position: absolute;
     bottom: 0;
     height: 60px;
@@ -434,6 +436,18 @@ $carouselHeight: 500px;
       color: #333;
       font-size: 20px;
       padding: 10px;
+      .price {
+        float: right;
+        margin: 0;
+        font-weight: 700;
+        font-style: italic;
+        font-family: "Josefin Slab"
+      }
+    }
+  }
+  &:hover {
+    .image {
+      transform: scale(1.1);
     }
   }
  }
@@ -479,12 +493,14 @@ $carouselHeight: 500px;
 .promo-button {
   border: none;
   border-radius: 0px;
-  background-color: #13ACB1;
+  background-color: $teal;
   color: #fff;
   font-size: 30px;
   font-family: "Dancing Script",sans-serif;
   padding: 15px 45px;
   letter-spacing: 2px;
+  border: 1px solid $teal;
+  transition: background-color .4s ease;
   &:hover {
     background-color: darken(#13ACB1, 10%);
   }
@@ -495,7 +511,7 @@ $carouselHeight: 500px;
 }
 
 .flip {
-  transform: scaleX(-1) translateX(60%) !important;
+  // transform: scaleX(-1) translateX(60%) !important;
 }
 
 .mattress-quiz {
@@ -531,11 +547,20 @@ label {
   font-weight: 100;
   font-size: 16px;
   font-family: "Open Sans";
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .new_search label {
   display: inline;
-  padding-left: 5px;
+  padding-left: 35px;
+  position: relative;
+  @media screen and (min-width: 768px) {
+    & {
+      display: block;
+    }
+  }
 }
 
 // ============================================== Brand Page  ==============================================
@@ -565,9 +590,130 @@ label {
   }
 }
 
+.brand-name {
+  text-align: center;
+  font-size: 48px;
+}
+
 .brand-video {
-  width: auto;
-  height: 80vh;
+  // width: 80%;
+  // height: 80vh;
   margin: 10vh auto;
   display: block;
+}
+
+.brand-products {
+  overflow: hidden;
+  .mattress {
+    padding: 0;
+    img {
+      transition: transform .4s ease;
+    }
+    &:hover {
+      img {
+        transform: scale(1.1);
+      };
+    }
+  }
+}
+
+
+.product-search {
+  h1 {
+    text-align: center;
+    margin-top: 0px;
+  }
+}
+
+// ==============================================  Mattress Index Styles ==============================================
+.mattresses {
+  margin-top: 20px;
+
+  .promo-button {
+    float: right;
+  }
+}
+
+.products {
+  margin-top: 20px;
+
+  .product-search {
+    .promo-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .col-sm-2 {
+      position: relative;
+      min-height: 60px;
+      @media screen and (min-width: 768px) {
+        & {
+          min-height: 200px;
+        }
+        .promo-button {
+          left: -15px;
+        }
+      }
+      @media screen and (min-width: 992px) {
+        left: auto;
+      }
+    }
+  }
+}
+
+
+
+// ==============================================  Radio Button Styles  ==============================================
+
+
+[type="radio"]:checked+label:before {
+    border: 2px solid transparent;
+}
+
+[type="radio"]:checked+label:after {
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
+}
+
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:after {
+    background-color: $teal;
+}
+
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after {
+    border: 2px solid $teal;
+}
+
+[type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after, [type="radio"]:checked+label:before, [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after {
+    border-radius: 50%;
+}
+
+[type="radio"]+label:before, [type="radio"]+label:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 4px;
+    width: 16px;
+    height: 16px;
+    z-index: 0;
+    -webkit-transition: .28s ease;
+    transition: .28s ease;
+}
+
+[type="radio"]:not(:checked), [type="radio"]:checked {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after {
+    border: 2px solid #5a5a5a;
+}
+
+[type="radio"]:not(:checked)+label:after {
+    -webkit-transform: scale(0);
+    transform: scale(0);
 }

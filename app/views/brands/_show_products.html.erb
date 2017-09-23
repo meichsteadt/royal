@@ -1,0 +1,16 @@
+<% if @products.length > 0 %>
+  <% @products.each do |product| %>
+  <%= link_to(product_path(product)) do %>
+    <div class="col-md-6 product">
+      <div class="safe-zone">
+        <div class="image" style="background: url(<%= product.image %>); background-size: cover; background-position: center center;"></div>
+      </div>
+      <div class="info">
+        <p><%= product.name %></p>
+      </div>
+    </div>
+  <% end %>
+  <% end %>
+<% else %>
+  <h1>Sorry, no products match those criteria</h1>
+<% end %>

@@ -1,0 +1,66 @@
+<div class="mattresses clearfix">
+  <div class="col-md-4 product-search">
+    <div class="box clearfix">
+      <h1>Product Search</h1>
+      <%= form_for(@search) do |f| %>
+        <%= f.hidden_field :category, value: "mattresses" %>
+        <div class="form-group">
+          <h3>Price</h3>
+          <%= f.number_field :min, placeholder: "min" %>
+          <p>to</p>
+          <%= f.number_field :max, placeholder: "max" %>
+        </div>
+        <hr>
+        <div class="form-group">
+          <h3>Size</h3>
+          <%= f.radio_button :size, :all %>
+          <%= f.label :size_all, "All Sizes" %>
+          <%= f.radio_button :size, :twin %>
+          <%= f.label :size_twin, "Twin" %>
+          <%= f.radio_button :size, "full" %>
+          <%= f.label :size_full, "Full" %>
+          <%= f.radio_button :size, "queen" %>
+          <%= f.label :size_queen, "Queen" %>
+          <%= f.radio_button :size, "eastern_king" %>
+          <%= f.label :size_eastern_king, "Eastern King" %>
+          <%= f.radio_button :size, "cal_king" %>
+          <%= f.label :size_cal_king, "Cal King" %>
+        </div>
+        <hr>
+        <div class="form-group">
+          <h3>Features</h3>
+          <%= f.radio_button :features, "all" %>
+          <%= f.label :features_all, "All Features" %>
+          <%= f.radio_button :features, "foam" %>
+          <%= f.label :features_foam, "Memory Foam" %>
+          <%= f.radio_button :features, "latex" %>
+          <%= f.label :features_latex, "Latex" %>
+          <%= f.radio_button :features, "pocketed_coil" %>
+          <%= f.label :features_pocketed_coil, "Pocketed Coil" %>
+          <%= f.radio_button :features, "innerspring" %>
+          <%= f.label :features_innerspring, "Innerspring" %>
+        </div>
+        <%= f.submit "Search", class: "promo-button promo-button-sm" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-8 brand-products">
+    <div class="box clearfix">
+      <h1 class="text-center">Mattresses</h1>
+      <% if @mattresses.length > 0 %>
+        <% @mattresses.each do |mattress| %>
+          <%= link_to mattress_path(mattress) do %>
+            <div class="col-md-6 product">
+              <img class="image img-responsive" src="<%= mattress.image %>" alt="">
+              <div class="info">
+                <p><%= mattress.name %><span class="price"><%= number_to_currency(mattress.price) %></span></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% else %>
+        <h1>Sorry, no products match those criteria</h1>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -22,7 +22,7 @@
           <h2><%= @product.name %></h2>
           <p><%= @product.description %></p>
           <div class="price">
-            <h1>$299</h1>
+            <h1><%= number_to_currency(@product.price, precision: 0) %></h1>
             <% if @product.sale %>
             <h3 class="sale">$349</h3>
             <% end %>

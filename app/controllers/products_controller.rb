@@ -5,7 +5,13 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @category = params[:category]
-    @products = Product.where(category: @category)
+    if params[:search]
+      @search = Search.new(min: params[:search][:min], max: params[:search][:max], category: @category, counter_height: params[:search][:counter_height], style: params[:search][:style], pieces: params[:search][:pieces])
+      @products = Product.filter(@search).sort_by { |product| product.price}
+    else
+      @search = Search.new(min: 0, max: 5000, style: "all", counter_height: nil)
+      @products = Product.where(category: @category).sort_by { |product| product.price}
+    end
   end
 
   # GET /products/1

@@ -1,0 +1,14 @@
+<% if @mattresses.length > 0 %>
+  <% @mattresses.each do |mattress| %>
+    <%= link_to mattress_path(mattress) do %>
+      <div class="col-md-6 mattress">
+        <img class="image img-responsive" src="<%= mattress.image %>" alt="">
+        <div class="info">
+          <p><%= mattress.name %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% else %>
+  <h1>Sorry, no products match those criteria</h1>
+<% end %>

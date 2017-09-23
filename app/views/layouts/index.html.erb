@@ -53,7 +53,7 @@
     <hr class="tagline-divider">
   </div>
   <div class="col-md-6">
-    <img class="img-responsive img-border-left shadow img-full" src="<%= @store.store_image %>" alt="<%= @store.name %> Logo" >
+    <%= image_tag("store.png", class: 'img-responsive img-border-left shadow img-full') %>
   </div>
   <div class="col-md-6">
     <p><%= @store.store_copy %></p>

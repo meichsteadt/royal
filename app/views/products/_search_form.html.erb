@@ -1,0 +1,53 @@
+<div class="col-md-12 product-search">
+  <div class="clearfix">
+    <div class="row">
+      <%= form_for(@search) do |f| %>
+      <%= f.hidden_field :category, value: @category %>
+      <div class="form-group col-sm-3">
+        <h3>Price</h3>
+        <%= f.number_field :min, placeholder: "min", class: "form-control" %>
+        <p>to</p>
+        <%= f.number_field :max, placeholder: "max", class: "form-control" %>
+      </div>
+      <div class="form-group col-sm-3 col-sm-offset-1">
+        <h3>Style</h3>
+        <%= f.radio_button :style, :all %>
+        <%= f.label :style_all, "All Styles" %>
+        <%= f.radio_button :style, :traditional %>
+        <%= f.label :style_traditional, "Traditional" %>
+        <%= f.radio_button :style, "contemporary" %>
+        <%= f.label :style_contemporary, "Contemporary" %>
+        <%= f.radio_button :style, "rustic" %>
+        <%= f.label :style_rustic, "Rustic" %>
+      </div>
+
+      <% if @category == "dining" %>
+        <div class="form-group col-sm-3">
+          <h3>Height</h3>
+          <%= f.radio_button :counter_height, nil %>
+          <%= f.label :counter_height, "Any" %>
+          <%= f.radio_button :counter_height, false %>
+          <%= f.label :counter_height_false, "Dining Height" %>
+          <%= f.radio_button :counter_height, true %>
+          <%= f.label :counter_height_true, "Counter Height" %>
+        </div>
+      <% elsif @category == "bedroom" %>
+        <div class="form-group col-sm-3">
+          <h3>Number of Pieces</h3>
+          <%= f.radio_button :pieces, nil %>
+          <%= f.label :pieces, "Any" %>
+          <%= f.radio_button :pieces, 1 %>
+          <%= f.label :pieces_1, "Bed Only" %>
+          <%= f.radio_button :pieces, 2 %>
+          <%= f.label :pieces_2, "Bedroom Set" %>
+        </div>
+      <% end %>
+      <div class="col-sm-2">
+        <div>
+          <%= f.submit "Search", class: "promo-button promo-button-sm search-button" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

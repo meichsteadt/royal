@@ -1,17 +1,18 @@
-<div class="hero">
+<!-- <div class="hero">
   <img class="bg" src="<%= @brand.image %>" alt="">
   <h1><%= @brand.name %></h1>
-</div>
+</div> -->
 
-  <div class="container">
+  <!-- <div class="container">
     <div class="row">
-      <iframe class="brand-video" src="<%= @brand.video %>"></iframe>
+      <% video_tag('chattam.mp4', controls: true, class: "brand-video") %>
     </div>
-  </div>
-
+  </div> -->
+<br>
 <div class="clearfix">
-  <div class="col-md-4">
-    <div class="box">
+  <div class="col-md-4 product-search">
+    <div class="box clearfix">
+      <h1>Product Search</h1>
       <%= form_for(@search) do |f| %>
       <%= hidden_field_tag :id, @brand.id %>
         <div class="form-group">
@@ -21,59 +22,22 @@
           <%= f.number_field :max, placeholder: "max" %>
         </div>
         <hr>
-        <div class="form-group">
-          <h3>Size</h3>
-          <%= f.radio_button :size, :all %>
-          <%= f.label :size_all, "All Sizes" %>
-          <br>
-          <%= f.radio_button :size, :twin %>
-          <%= f.label :size_twin, "Twin" %>
-          <br>
-          <%= f.radio_button :size, "full" %>
-          <%= f.label :size_full, "Full" %>
-          <br>
-          <%= f.radio_button :size, "queen" %>
-          <%= f.label :size_queen, "Queen" %>
-          <br>
-          <%= f.radio_button :size, "eastern_king" %>
-          <%= f.label :size_eastern_king, "Eastern King" %>
-          <br>
-          <%= f.radio_button :size, "cal_king" %>
-          <%= f.label :size_cal_king, "Cal King" %>
-        </div>
-        <hr>
-        <div class="form-group">
-          <h3>Features</h3>
-          <%= f.radio_button :features, "all" %>
-          <%= f.label :all, "All Features" %>
-          <br>
-          <%= f.radio_button :features, "foam" %>
-          <%= f.label :features_foam, "Memory Foam" %>
-          <br>
-          <%= f.radio_button :features, "latex" %>
-          <%= f.label :features_latex, "Latex" %>
-          <br>
-          <%= f.radio_button :features, "pocketed_coil" %>
-          <%= f.label :features_pocketed_coil, "Pocketed Coil" %>
-          <br>
-          <%= f.radio_button :features, "innerspring" %>
-          <%= f.label :features_innerspring, "Innerspring" %>
-          <br>
-        </div>
+      <% if @brand.category == "mattresses" %>
+        <%= render "mattress_search", f: f %>
+      <% else %>
+        <%= render "product_search", f: f %>
+      <% end %>
         <%= f.submit "Search", class: "promo-button promo-button-sm" %>
       <% end %>
     </div>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-8 brand-products">
     <div class="box clearfix">
-      <% if @mattresses.length > 0 %>
-        <% @mattresses.each do |mattress| %>
-          <div class="col-md-6 product">
-            <img class="img-responsive" src="<%= mattress.image %>" alt="">
-          </div>
-        <% end %>
+      <h1 class="brand-name"><%= @brand.name %></h1>
+      <% if @brand.category == "mattresses" %>
+        <%= render "show_mattresses" %>
       <% else %>
-        <h1>Sorry, no products match those criteria</h1>
+        <%= render "show_products" %>
       <% end %>
     </div>
   </div>

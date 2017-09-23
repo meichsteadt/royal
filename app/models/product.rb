@@ -1,6 +1,24 @@
 class Product < ApplicationRecord
   def sale
-    true
+    false
+  end
+
+  def self.filter(params)
+    @products = Product.where(category: params[:category]).where("price < ?", params[:max]).where("price > ?", params[:min])
+    if !params[:counter_height].nil?
+      @products = @products.where(counter_height: params[:counter_height])
+    end
+    if params[:style] && params[:style] != "all"
+      @products = @products.where(style: params[:style])
+    end
+    if params[:pieces]
+      if params[:pieces] > 1
+        @products = @products.where("pieces > ?", 1)
+      else
+        @products = @products.where(pieces: 1)
+      end
+    end
+    @products
   end
 
   def self.get_products

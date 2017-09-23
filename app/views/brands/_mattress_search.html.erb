@@ -1,0 +1,39 @@
+<div class="form-group">
+  <h3>Size</h3>
+  <%= f.radio_button :size, :all %>
+  <%= f.label :size_all, "All Sizes" %>
+  <br>
+  <%= f.radio_button :size, :twin %>
+  <%= f.label :size_twin, "Twin" %>
+  <br>
+  <%= f.radio_button :size, "full" %>
+  <%= f.label :size_full, "Full" %>
+  <br>
+  <%= f.radio_button :size, "queen" %>
+  <%= f.label :size_queen, "Queen" %>
+  <br>
+  <%= f.radio_button :size, "eastern_king" %>
+  <%= f.label :size_eastern_king, "Eastern King" %>
+  <br>
+  <%= f.radio_button :size, "cal_king" %>
+  <%= f.label :size_cal_king, "Cal King" %>
+</div>
+<hr>
+<div class="form-group">
+  <h3>Features</h3>
+  <%= f.radio_button :features, "all" %>
+  <%= f.label :features_all, "All Features" %>
+  <br>
+  <%= f.radio_button :features, "foam" %>
+  <%= f.label :features_foam, "Memory Foam" %>
+  <br>
+  <%= f.radio_button :features, "latex" %>
+  <%= f.label :features_latex, "Latex" %>
+  <br>
+  <%= f.radio_button :features, "pocketed_coil" %>
+  <%= f.label :features_pocketed_coil, "Pocketed Coil" %>
+  <br>
+  <%= f.radio_button :features, "innerspring" %>
+  <%= f.label :features_innerspring, "Innerspring" %>
+  <br>
+</div>
