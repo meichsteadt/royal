@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+    <div class="box">
+      <div class="col-lg-12 text-center">
+        <h1><%= @mattress.name %></h1>
+        <h3><%= Brand.find(@mattress.brand_id).name %></h3>
+        <hr>
+      </div>
+        <div class="col-md-6">
+          <img id="mattressImage" class = "img-responsive product-img" src="<%= @mattress.image %>">
+        </div>
+        <div class="col-md-6 text-center">
+          <div class="row">
+            <div class="col-md-4">
+              <h3>Comfort Level</h3>
+              <div class="comfort-wrapper">
+                <%= image_tag(@mattress.firmness_image, class: "img-responsive img-center") %>
+              </div>
+              <p><%= @mattress.firmness %></p>
+            </div>
+            <div class="col-md-4">
+              <h3>Components</h3>
+              <%= image_tag(@mattress.components_image, class: "img-responsive img-center") %>
+              <ul style="text-align: left;">
+                <% @mattress.show_components.each do |comp| %>
+                  <li><%= comp %></li>
+                <% end %>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h3>Warranty</h3>
+              <%= image_tag("warranty.png", class: "img-responsive img-center") %>
+              <p><%= @mattress.warranty_length %> years</p>
+            </div>
+          </div>
+          <p><%= @mattress.description %></p>
+        </div>
+        <div class="price col-md-12">
+          <table class="table-responsive col-md-12">
+            <tr style="border-bottom: 1px solid #333;">
+              <th>Size</th>
+              <th>Set</th>
+              <th>Mattress</th>
+            </tr>
+            <% @mattress.show_prices.each do |key, val| %>
+            <tr>
+              <td><%= key.capitalize %></td>
+              <td><%= number_to_currency(val[:set], precision: 0) %></td>
+              <td><%= number_to_currency(val[:matt], precision: 0)%></td>
+            </tr>
+            <% end %>
+          </table>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+  </div>
+</div>

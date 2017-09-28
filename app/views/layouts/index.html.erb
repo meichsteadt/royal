@@ -26,21 +26,21 @@
           <img class="flip" src="<%= @slideshow[1].image %>" alt="">
         </div>
       </div>
-        <div class="item mattress-quiz">
+        <!-- <div class="item mattress-quiz">
           <%= link_to quiz_index_path do %>
           <h2>Find your perfect mattress in minutes</h2>
-          <!-- <button class="promo-button">Take our quiz</button> -->
+          <!- <button class="promo-button">Take our quiz</button> -->
           <img class="" src="https://www.goodbed.com/media/pictures/mattresses/serta/serta-picture-30.jpg" alt="">
           <% end %>
-        </div>
+        </div> -->
     </div>
     <!-- Controls -->
-    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <!-- <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
       <span class="icon-prev"></span>
     </a>
     <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
       <span class="icon-next"></span>
-    </a>
+    </a> -->
   </div>
 
 <div class="box" style="margin-top: 40px;">
@@ -53,7 +53,7 @@
     <hr class="tagline-divider">
   </div>
   <div class="col-md-6">
-    <%= image_tag("store.png", class: 'img-responsive img-border-left shadow img-full') %>
+    <%= image_tag(@store.store_image, class: 'img-responsive img-border-left shadow img-full') %>
   </div>
   <div class="col-md-6">
     <p><%= @store.store_copy %></p>

@@ -16,7 +16,7 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-$color1: rgba(255,255,255,.9);
+$color1: rgba(255,255,255,1);
 $teal: #13ACB1;
 $carouselHeight: 500px;
 
@@ -103,7 +103,7 @@ $carouselHeight: 500px;
  }
 
  .box {
-     margin-bottom: 20px;
+     margin: 20px auto;
      padding: 30px 15px;
      background: #fafafa;
  }
@@ -124,6 +124,11 @@ $carouselHeight: 500px;
  .img-left {
      float: none;
      margin: 0 auto 0;
+ }
+
+ .img-center {
+   display: block;
+   margin: 0 auto;
  }
 
  footer {
@@ -391,6 +396,9 @@ $carouselHeight: 500px;
    h1 {
      font-size: 60px;
      display: inline-block;
+   }
+   td, th {
+     font-size: 24px;
    }
  }
 
@@ -662,7 +670,10 @@ label {
   }
 }
 
-
+// ==============================================  Mattress Show Styles  ==============================================
+.comfort-wrapper {
+  background-color: #ccc;
+}
 
 // ==============================================  Radio Button Styles  ==============================================
 
@@ -716,4 +727,14 @@ label {
 [type="radio"]:not(:checked)+label:after {
     -webkit-transform: scale(0);
     transform: scale(0);
+}
+
+
+table td, th {
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  text-align: center;
 }

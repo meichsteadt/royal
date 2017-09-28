@@ -10,6 +10,6 @@ class MattressesController < ApplicationController
   end
 
   def show
-
+    @mattress = Mattress.find(params[:id])
   end
 end

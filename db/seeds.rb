@@ -1,20 +1,31 @@
-coaster = Brand.new(name: "Coaster", video: nil, logo: "https://s3-us-west-2.amazonaws.com/fdn-images-2/img/dealer/40370/Upload/logo/e973633264e44b1c9a742125cb9d13bb.jpg")
+Store.create(name: "Royal Furniture", address: "5365 N Blackstone Ave, Fresno, CA 93710", phone: "(559) 431-1217", hours: "Monday	10AM–8PM, Tuesday	10AM–8PM, Wednesday	10AM–8PM, Thursday	10AM–8PM, Friday	10AM–8PM, Saturday	10AM–8PM, Sunday	10:30AM–8PM", store_copy: "Occupy kitsch plaid cornhole tattooed sartorial four dollar toast pour-over. Irony tilde retro, messenger bag hammock gluten-free seitan +1 intelligentsia literally. Chicharrones ramps forage, vegan tousled wayfarers franzen.", store_image: "https://s3-us-west-1.amazonaws.com/royal-furniture/IMG_0157.JPG", gmaps: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12776.556342946536!2d-119.7919216!3d36.8151869!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3ebee9e8532f014a!2sRoyal+Furniture!5e0!3m2!1sen!2sus!4v1506130453305")
+
+coaster = Brand.new(name: "Coaster", video: nil, logo: "https://s3-us-west-2.amazonaws.com/fdn-images-2/img/dealer/40370/Upload/logo/e973633264e44b1c9a742125cb9d13bb.jpg", category: "furniture")
 coaster.save!
 
-homelegance = Brand.new(name: "Homelegance", video: nil, logo: "https://www.homelegance.com/wp-content/themes/h2/images/logo.png")
+homelegance = Brand.new(name: "Homelegance", video: nil, logo: "https://www.homelegance.com/wp-content/themes/h2/images/logo.png", category: "furniture")
 homelegance.save!
 
-acme = Brand.new(name: "Acme", logo: "https://www.acmecorp.com/skin/frontend/acmefurniture/acme/images/acme_logo.png")
+acme = Brand.new(name: "Acme", logo: "https://www.acmecorp.com/skin/frontend/acmefurniture/acme/images/acme_logo.png", category: "furniture")
 acme.save!
 
-foa = Brand.new(name: "Furniture of America", logo: "https://scontent.fsnc1-1.fna.fbcdn.net/v/t1.0-9/1454611_875423402508474_6570122812190848548_n.jpg?oh=d545c7ffb3dfccb89eae34700165a300&oe=5A215584")
+foa = Brand.new(name: "Furniture of America", logo: "https://scontent.fsnc1-1.fna.fbcdn.net/v/t1.0-9/1454611_875423402508474_6570122812190848548_n.jpg?oh=d545c7ffb3dfccb89eae34700165a300&oe=5A215584", category: "furniture")
 foa.save!
 
-urban = Brand.new(name: "Urban Styles", logo: "http://www.urbanstyles.net/skin/frontend/default/theme638/images/logo.png")
+urban = Brand.new(name: "Urban Styles", logo: "http://www.urbanstyles.net/skin/frontend/default/theme638/images/logo.png", category: "furniture")
 urban.save!
 
-new_classic = Brand.new(name: "New Classic", logo: "http://newclassicfurniture.com/wp-content/uploads/2016/09/logo-new-1.jpg")
+new_classic = Brand.new(name: "New Classic", logo: "http://newclassicfurniture.com/wp-content/uploads/2016/09/logo-new-1.jpg", category: "furniture")
 new_classic.save!
+
+gomen = Brand.new(name: "Gomen Furniture", logo: "http://static1.squarespace.com/static/53152d7fe4b05e4b3991347b/t/5318c064e4b02cc79a151e66/1462490666933/?format=500w", category: "furniture")
+gomen.save!
+
+stanford = Brand.new(name: "Stanford Furniture", category: "furniture")
+stanford.save!
+
+diamond = Brand.new(name: "Diamond Mattress", category: "mattresses", logo: "")
+diamond.save!
 
 Product.create(name:"Doyle Traditional Oval End Table with Glass Inlay Top" , image: "http://imageresizer.furnituredealer.net/img/remote/s3-us-west-2.amazonaws.com/fdn-images-2/img/products%2Fcoaster%2Fcolor%2Fdoyle_3891-b.jpg?width=500&height=500", description: "Traditional occasional tables feature hand carved detailing with glass inlay. All pieces feature storage shelves. Ornate legs carved into a serpentine shape", category: "occasional", style: "traditional", brand_id: coaster.id)
 
@@ -91,3 +102,29 @@ Product.create(name:"Farmhouse Dining Set" , image: "http://www.urbanstyles.net/
 Product.create(name:"Liberty Dining Set" , image: "http://www.urbanstyles.net/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/l/i/liberty_main.jpg", description: "Distinguish your dining room with this dark toned dining set. Dark oak finishes feature rustic tones that add rich character to the clean designs. Comforting leatherette tightly wraps the cushioned chairs and slat backs provide a breathable back rest. Welcome this dining set for sophistication and unparalleled refinment.", category: "dining", style: "contemporary", brand_id: urban.id, counter_height: false)
 
 Product.create(name:"Palmdale Dining Set" , image: "http://www.urbanstyles.net/media/catalog/product/cache/1/image/900x600/9df78eab33525d08d6e5fb8d27136e95/p/a/palmdale_dining.jpg", description: "Entertain your guest with this French country design dining set. Table features a butterfly leaf, and chairs are upholstered in rustic faux leather.", category: "dining", style: "contemporary", brand_id: urban.id, counter_height: false)
+
+Product.create(name: "Melanie Sectional", image: "http://gomenfurniture.mov.mn/files/sanpham/58/1/jpg/melanie.jpg", description: "", category: "seating", style: "contemporary", brand_id: gomen.id, sofa_love: false)
+
+Product.create(name: "Nicole Sofa Set", image: "http://gomenfurniture.mov.mn/files/sanpham/26/1/jpg/nicole.jpg", description: "", category: "seating", style: "contemporary", brand_id: gomen.id, sofa_love: true)
+
+Product.create(name: "Sunrise Sofa Set", image: "http://gomenfurniture.mov.mn/files/sanpham/22/1/jpg/sunrise.jpg", description: "", category: "seating", style: "rustic", brand_id: gomen.id, sofa_love: true)
+
+Product.create(name: "Polo Sofa Set", image: "http://gomenfurniture.mov.mn/files/sanpham/48/1/jpg/polo.jpg", description: "", category: "seating", style: "contemporary", brand_id: gomen.id, sofa_love: true)
+
+Product.create(name: "Dallas Sofa Set", image: "http://danstoller.mov.mn/files/sanpham/37/1/jpg/dallas.jpg", description: "", category: "seating", style: "contemporary", brand_id: stanford.id, sofa_love: true)
+
+Product.create(name: "Oxford Sectional", image: "http://danstoller.mov.mn/files/sanpham/16/1/jpg/oxford.jpg", description: "", category: "seating", style: "contemporary", brand_id: stanford.id, sofa_love: false)
+
+Product.create(name: "Roxanne Sofa Set", image: "http://danstoller.mov.mn/files/sanpham/5/1/jpg/roxanne-gray.jpg", description: "", category: "seating", style: "contemporary", brand_id: stanford.id, sofa_love: true)
+
+Mattress.create(name: "Holiday Medium", brand_id: diamond.id, price: 749, sizes: ["Twin", "Full", "Queen", "King"], description: "The Dream Collection combines our 744 foam-encased, individually-wrapped coil support system and visco memory foam to help you fall asleep faster, stay asleep longer and wake up feeling refreshed. Dream Collection beds do not transfer motion between partners, allowing you to sleep throughout the night and receive deeper, more rejuvenating rest. These beds also reduce tossing and turning through the pressure-relieving support of our luxurious Eco-Flex plant-based comfort layers.", firmness: "medium", warranty_length: 20, components: ["gel", "pocketed_coil"], adjustable: true, image: "http://www.diamondmattress.com/Resources/ProductPhotos/Holiday%20ET_3.jpg", price_sizes: {"twin": {"matt": 399, "set": 499}, "full": {"matt": 499, "set": 599}, "queen": {"matt": 599, "set": 749}, "king": {"matt":849, "set": 1049}})
+
+Mattress.create(name: "Holiday Firm", brand_id: diamond.id, price: 749, sizes: ["Twin", "Full", "Queen", "King"], description: "The Dream Collection combines our 744 foam-encased, individually-wrapped coil support system and visco memory foam to help you fall asleep faster, stay asleep longer and wake up feeling refreshed. Dream Collection beds do not transfer motion between partners, allowing you to sleep throughout the night and receive deeper, more rejuvenating rest. These beds also reduce tossing and turning through the pressure-relieving support of our luxurious Eco-Flex plant-based comfort layers.", firmness: "firm", warranty_length: 20, components: ["gel", "pocketed_coil"], adjustable: true, image: "http://www.diamondmattress.com/Resources/ProductPhotos/Holiday%20ET_3.jpg", price_sizes: {"twin": {"matt": 399, "set": 499}, "full": {"matt": 499, "set": 599}, "queen": {"matt": 599, "set": 749}, "king": {"matt":849, "set": 1049}})
+
+Mattress.create(name: "Holiday Pillow Top", brand_id: diamond.id, price: 849, sizes: ["Twin", "Full", "Queen", "King"], description: "The Dream Collection combines our 744 foam-encased, individually-wrapped coil support system and visco memory foam to help you fall asleep faster, stay asleep longer and wake up feeling refreshed. Dream Collection beds do not transfer motion between partners, allowing you to sleep throughout the night and receive deeper, more rejuvenating rest. These beds also reduce tossing and turning through the pressure-relieving support of our luxurious Eco-Flex plant-based comfort layers.", firmness: "plush", warranty_length: 20, components: ["gel", "pocketed_coil"], adjustable: true, image: "http://www.diamondmattress.com/Resources/ProductPhotos/Holiday%20ET_3.jpg", price_sizes: {"twin": {"matt": 499, "set": 599}, "full": {"matt": 599, "set": 749}, "queen": {"matt": 699, "set": 849}, "king": {"matt":949, "set": 1199}})
+
+Mattress.create(name: "Holiday Euro Top", brand_id: diamond.id, price: 799, sizes: ["Twin", "Full", "Queen", "King"], description: "The Dream Collection combines our 744 foam-encased, individually-wrapped coil support system and visco memory foam to help you fall asleep faster, stay asleep longer and wake up feeling refreshed. Dream Collection beds do not transfer motion between partners, allowing you to sleep throughout the night and receive deeper, more rejuvenating rest. These beds also reduce tossing and turning through the pressure-relieving support of our luxurious Eco-Flex plant-based comfort layers.", firmness: "plush", warranty_length: 20, components: ["gel", "pocketed_coil"], adjustable: true, image: "http://www.diamondmattress.com/Resources/ProductPhotos/Holiday%20ET_3.jpg", price_sizes: {"twin": {"matt": 449, "set": 549}, "full": {"matt": 549, "set": 649}, "queen": {"matt": 649, "set": 799}, "king": {"matt":899, "set": 1099}})
+
+Mattress.create(name: "Shadow Luxury Medium", brand_id: diamond.id, price: 1099, sizes: ["Twin", "Full", "Queen", "King"], description: "The Collection is designed for a luxurious, comfortable and extravagant night's sleep. It's technically developed to help you fall asleep faster, stay asleep longer and wake up feeling refreshed, The Black Diamond beds do not transfer motion between partners, allowing you to sleep throughout the night and receive deeper, more rejuvenating rest. These beds also reduce tossing and turning through the pressure relieving support of our luxurious Eco-Flex plant-based comfort layers and the most advanced, high quality components.", firmness: "medium", warranty_length: 20, components: ["gel_foam", "pocketed_coil"], adjustable: true, image: "http://www.diamondmattress.com/Resources/ProductPhotos/A%20BD_Grandeur_Scaled.jpg", price_sizes: {"twin": {"matt": 599, "set": 699}, "full": {"matt": 799, "set": 899}, "queen": {"matt": 999, "set": 1099}, "king": {"matt":1199, "set": 1399}})
+
+Mattress.create(name: "Highlight Medium", brand_id: diamond.id, price: 1099, sizes: ["Twin", "Full", "Queen", "King"], description: "The CoolTouchGEL Memory Foam Collection has been designed using our advanced Gel technology that uses chilling beads to maintain balanced body temperature. Combining the benefits of our ventilated and open-cell design, CoolTouchGEL Memory Foam is 12x more breathable than any other nationally advertised memory foam product.", firmness: "medium", warranty_length: 20, components: ["gel_foam", "memory_foam"], adjustable: true, image: "http://www.diamondmattress.com/Resources/ProductPhotos/CT_Enchantment%20Med.jpg", price_sizes: {"twin": {"matt": 499, "set": 599}, "full": {"matt": 599, "set": 749}, "queen": {"matt": 699, "set": 849}, "king": {"matt":949, "set": 1199}})
