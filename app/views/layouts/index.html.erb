@@ -1,5 +1,5 @@
-
-  <div id="carousel-example-generic" class="carousel slide">
+<div class="container">
+  <div id="carousel-example-generic" class="carousel slide" style="margin-top: 20px">
     <!-- Indicators -->
     <ol class="carousel-indicators hidden-xs">
       <% @slideshow.each_with_index do |image, index| %>
@@ -26,39 +26,40 @@
           <img class="flip" src="<%= @slideshow[1].image %>" alt="">
         </div>
       </div>
-        <!-- <div class="item mattress-quiz">
-          <%= link_to quiz_index_path do %>
-          <h2>Find your perfect mattress in minutes</h2>
-          <!- <button class="promo-button">Take our quiz</button> -->
-          <img class="" src="https://www.goodbed.com/media/pictures/mattresses/serta/serta-picture-30.jpg" alt="">
-          <% end %>
-        </div> -->
-    </div>
-    <!-- Controls -->
-    <!-- <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-      <span class="icon-prev"></span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-      <span class="icon-next"></span>
-    </a> -->
+      <!-- <div class="item mattress-quiz">
+      <%= link_to quiz_index_path do %>
+      <h2>Find your perfect mattress in minutes</h2>
+      <button class="promo-button">Take our quiz</button>
+      <img class="" src="https://www.goodbed.com/media/pictures/mattresses/serta/serta-picture-30.jpg" alt="">
+      <% end %>
+    </div> -->
   </div>
+</div>
+  <!-- Controls -->
+  <!-- <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+  <span class="icon-prev"></span>
+</a>
+<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+<span class="icon-next"></span>
+</a> -->
 
-<div class="box" style="margin-top: 40px;">
-  <div class="col-lg-12 text-center">
-    <hr>
-    <h2 class="brand-before">
-      <small>Welcome to</small>
-    </h2>
-    <h1 class="brand-name"><%= @store.name %></h1>
-    <hr class="tagline-divider">
+  <div class="box" style="margin-top: 40px;">
+    <div class="col-lg-12 text-center">
+      <hr>
+      <h2 class="brand-before">
+        <small>Welcome to</small>
+      </h2>
+      <h1 class="brand-name"><%= @store.name %></h1>
+      <hr class="tagline-divider">
+    </div>
+    <div class="col-md-6">
+      <%= image_tag(@store.store_image, class: 'img-responsive img-border-left shadow img-full') %>
+    </div>
+    <div class="col-md-6">
+      <p><%= @store.store_copy %></p>
+    </div>
+    <div class="clearfix"></div>
   </div>
-  <div class="col-md-6">
-    <%= image_tag(@store.store_image, class: 'img-responsive img-border-left shadow img-full') %>
-  </div>
-  <div class="col-md-6">
-    <p><%= @store.store_copy %></p>
-  </div>
-  <div class="clearfix"></div>
 </div>
 
 <!-- Script to Activate the Carousel -->
