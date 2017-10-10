@@ -1,1 +1,13 @@
-<h1>Brands</h1>
+<div class="box clearfix">
+  <h1 class="text-center">Brands We Carry</h1>
+    <% @brands.each do |brand| %>
+      <%= link_to brand_path(brand) do %>
+        <div class="col-md-3 product">
+          <img class="image img-responsive" src="<%= brand.logo %>" alt="">
+          <div class="info">
+            <p><%= brand.name %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+</div>

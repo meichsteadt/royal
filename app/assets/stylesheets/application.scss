@@ -18,6 +18,8 @@
 
 $color1: rgba(255,255,255,1);
 $teal: #13ACB1;
+$purple: #543c5d;
+$teal: $purple;
 $carouselHeight: 500px;
 
  html {
@@ -28,7 +30,7 @@ $carouselHeight: 500px;
      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
      height: 100%;
      min-height: 100vh;
-     background: #fafafa;
+     background: #fff;
      height: 100%;
      position: relative;
      padding-bottom: 50px;
@@ -97,7 +99,7 @@ $carouselHeight: 500px;
  }
 
  .tagline-divider {
-     margin: 15px auto 3px;
+     margin: 35px auto 3px;
      max-width: 250px;
      border-color: #999999;
  }
@@ -105,7 +107,6 @@ $carouselHeight: 500px;
  .box {
      margin: 20px auto;
      padding: 30px 15px;
-     background: #fafafa;
  }
 
  .intro-text {
@@ -223,7 +224,6 @@ $carouselHeight: 500px;
      }
 
      .nav>li {
-       width: 20%;
        text-align: center;
        display: inline-block;
        float: none;
@@ -510,7 +510,7 @@ $carouselHeight: 500px;
   border: 1px solid $teal;
   transition: background-color .4s ease;
   &:hover {
-    background-color: darken(#13ACB1, 10%);
+    background-color: lighten($teal, 10%);
   }
 }
 
@@ -737,4 +737,11 @@ table td, th {
 
 th {
   text-align: center;
+}
+
+.footer-links {
+  list-style: none;
+  li {
+    display: inline-block;
+  }
 }
