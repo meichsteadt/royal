@@ -478,6 +478,7 @@ $carouselHeight: 500px;
       left: 50%;
       bottom: 0;
       transform: translateX(-50%);
+      width: 750px;
     }
   }
   .promo {
@@ -519,7 +520,7 @@ $carouselHeight: 500px;
 }
 
 .flip {
-  // transform: scaleX(-1) translateX(60%) !important;
+  transform: scaleX(-1) translateX(50%) !important;
 }
 
 .mattress-quiz {
