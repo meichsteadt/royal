@@ -32,11 +32,11 @@
           <%= f.radio_button :features, "all" %>
           <%= f.label :features_all, "All Features" %>
           <%= f.radio_button :features, "memory_foam" %>
-          <%= f.label :features_foam, "Memory Foam" %>
+          <%= f.label :features_memory_foam, "Memory Foam" %>
           <%= f.radio_button :features, "pocketed_coil" %>
           <%= f.label :features_pocketed_coil, "Pocketed Coil" %>
-          <%= f.radio_button :features, "innerspring" %>
-          <%= f.label :features_innerspring, "Innerspring" %>
+          <% f.radio_button :features, "innerspring" %>
+          <% f.label :features_innerspring, "Innerspring" %>
         </div>
         <%= f.submit "Search", class: "promo-button promo-button-sm" %>
       <% end %>
