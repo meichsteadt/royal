@@ -31,40 +31,49 @@ class Product < ApplicationRecord
   end
 
   def get_next
-    if self == Product.last
-      Product.first.id
+    products = Product.where(category: self.category)
+
+    if self == products.last
+      products.first.id
     else
-      self.id + 1
+      i = products.index(self)
+      products[i + 1].id
     end
   end
 
   def get_prev
-    if self == Product.first
-      Product.last.id
+    products = Product.where(category: self.category)
+    if self == products.first
+      products.last.id
     else
-      self.id - 1
+      i = products.index(self)
+      products[i - 1].id
     end
   end
 
   def get_nexter
-    if self == Product.last
-      Product.first.id + 1
-    elsif self == (Product.all.sort[-2])
-      Product.first.id
+    products = Product.where(category: self.category)
+    if self == products.last
+      products[1].id
+    elsif self == products[-2]
+      products[0].id
     else
-      self.id + 2
+      i = products.index(self)
+      products[i + 2].id
     end
   end
 
   def get_nextest
-    if self == Product.last
-      Product.first.id + 2
-    elsif self == (Product.all.sort[-2])
-      Product.first.id + 1
-    elsif self == (Product.all.sort[-3])
-      Product.first.id
+    products = Product.where(category: self.category)
+    if self == products.last
+      products[2].id
+    elsif self == products[-2]
+      products[1].id
+    elsif self == products[-3]
+      products[0].id
     else
-      self.id + 3
+      i = products.index(self)
+      products[i + 3].id
     end
   end
 end
