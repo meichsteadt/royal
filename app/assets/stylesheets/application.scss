@@ -58,6 +58,10 @@ $carouselHeight: 500px;
      border-color: #999999;
  }
 
+ .page {
+   overflow: hidden;
+ }
+
  .brand,
  .address-bar {
      display: none;
