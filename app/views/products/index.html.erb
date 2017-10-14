@@ -9,7 +9,7 @@
         <hr>
       </div>
 
-      <%= render "search_form" %>
+      <% render "search_form" %>
       <% if @products.length > 0 %>
         <% @products.each do |product| %>
           <% if product.description != " "%>
@@ -32,11 +32,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  $(function() {
-    $("#slideout-button").click(function() {
-      $(".product-search").css("transform", "translateX(0)")
-    })
-  })
-</script>
