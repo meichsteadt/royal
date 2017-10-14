@@ -54,7 +54,51 @@
         <hr class="tagline-divider">
       </div>
     </div>
+    <div class="row">
+      <h3 class="text-center lowercase">Shop by Category</h3>
+      <%= link_to "/seating" do %>
+      <div class="col-sm-3 shop-product product">
+        <div class="safe-zone">
+          <div class="image" style="background: url(<%= Product.find(46).image %>); background-size: cover; background-position: center center;"></div>
+          <div class="info">
+            <p>Living Room</p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      <%= link_to "/bedroom" do %>
+        <div class="col-sm-3 shop-product product">
+          <div class="safe-zone">
+            <div class="image" style="background: url(<%= Product.find(7).image %>); background-size: cover; background-position: center center;"></div>
+            <div class="info">
+              <p>Bedroom</p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <%= link_to "/dining" do %>
+        <div class="col-sm-3 shop-product product">
+          <div class="safe-zone">
+            <div class="image" style="background: url(<%= Product.find(36).image %>); background-size: cover; background-position: center center;"></div>
+            <div class="info">
+              <p>Dining</p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <%= link_to "/mattresses" do %>
+        <div class="col-sm-3 shop-product product">
+          <div class="safe-zone">
+            <div class="image" style="background: url('http://www.thedump.com/content/images/thumbs/0003184_meditations-enlightenment-queen-mattress_775.jpeg'); background-size: cover; background-position: center center;"></div>
+            <div class="info">
+              <p>Mattresses</p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
     <div class="row" style="margin-top: 20px;">
+      <h3 class="text-center lowercase">About Us</h3>
       <div class="col-md-7">
         <%= image_tag(@store.store_image, class: 'img-responsive img-border-left shadow img-full') %>
       </div>
@@ -64,6 +108,20 @@
     </div>
     <div class="clearfix"></div>
   </div>
+  <!-- Begin MailChimp Signup Form -->
+  <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+  <div id="mc_embed_signup">
+    <form action="https://sofalovedesigns.us13.list-manage.com/subscribe/post?u=94545b07e7bf44c99407cb920&amp;id=2296d31216" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll">
+    	    <label for="mce-EMAIL">Stay up to date on our promotions!</label>
+    	    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_94545b07e7bf44c99407cb920_2296d31216" tabindex="-1" value=""></div>
+          <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+        </div>
+    </form>
+  </div>
+<!--End mc_embed_signup-->
 </div>
 
 <!-- Script to Activate the Carousel -->

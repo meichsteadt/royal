@@ -19,7 +19,7 @@
 $color1: rgba(255,255,255,1);
 $teal: #13ACB1;
 $purple: #543c5d;
-$teal: $purple;
+$teal: darken(red, 10%);
 $carouselHeight: 500px;
 
  html {
@@ -749,4 +749,22 @@ th {
 .store-copy {
   line-height: 35px;
   margin-top: 20px;
+}
+
+.shop-product {
+  height: 200px;
+  .info {
+    text-align: center;
+  }
+}
+
+.lowercase {
+  text-transform: none;
+}
+
+#mc_embed_signup {
+  padding: 40px;
+  width: 150%;
+  background-color: #ddd;
+  margin-left: -25%;
 }

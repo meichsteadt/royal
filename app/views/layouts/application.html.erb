@@ -16,7 +16,8 @@
   <body>
     <div class="page">
       <div class="logo">
-        <div class="brand"><%= link_to @store.name, '/' %></div>
+        <!-- <div class="brand"><%= link_to @store.name, '/' %></div> -->
+        <%= image_tag('logo.jpg', class: "img-responsive", id: "logo") %>
         <div class="address-bar" id="address"><%= @store.address %> | <%= @store.phone %></div>
         <!-- Navigation -->
         <nav class="navbar navbar-default" role="navigation">

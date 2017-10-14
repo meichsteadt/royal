@@ -37,7 +37,7 @@ hr {
 .navbar-brand,
 .navbar-nav li a {
   line-height: 20px;
-  padding: 20px 35px !important;
+  padding: 5px;
 }
 
 .navbar-default {
@@ -244,8 +244,8 @@ a:hover {
   }
 
   .nav>li>a {
-      padding: 30px 15px;
-      padding-top: 10px;
+    font-size: 18px;
+    padding: 15px;
   }
 
   .navbar-nav>li>a {
@@ -263,4 +263,10 @@ a:hover {
 
 footer {
   border-top: 1px solid #333;
+}
+
+#logo {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
 }

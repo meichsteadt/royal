@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   end
 
   def self.filter(params)
-    @products = Product.where(category: params[:category]).where("price < ?", params[:max]).where("price > ?", params[:min])
+    @products = Product.where(category: params[:category]).where("price <= ?", params[:max]).where("price >= ?", params[:min])
     if !params[:counter_height].nil?
       @products = @products.where(counter_height: params[:counter_height])
     end
@@ -49,7 +49,7 @@ class Product < ApplicationRecord
   def get_nexter
     if self == Product.last
       Product.first.id + 1
-    elsif self == (Product.all[-2])
+    elsif self == (Product.all.sort[-2])
       Product.first.id
     else
       self.id + 2
@@ -59,9 +59,9 @@ class Product < ApplicationRecord
   def get_nextest
     if self == Product.last
       Product.first.id + 2
-    elsif self == (Product.all[-2])
+    elsif self == (Product.all.sort[-2])
       Product.first.id + 1
-    elsif self == (Product.all[-3])
+    elsif self == (Product.all.sort[-3])
       Product.first.id
     else
       self.id + 3
