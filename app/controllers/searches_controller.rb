@@ -12,7 +12,10 @@ private
     if params[:search][:pieces] == "on"
       params[:search][:pieces] = nil
     end
-    params.require(:search).permit(:min, :max, :size, :features, :category, :pieces, :style, :counter_height, :sectional, :sofa_love)
+    if params[:search][:motion] == "on"
+      params[:search][:motion] = nil
+    end
+    params.require(:search).permit(:min, :max, :size, :features, :category, :pieces, :style, :counter_height, :sectional, :sofa_love, :motion)
   end
 
   def paths(category)

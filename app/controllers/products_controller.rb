@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   def index
     @category = params[:category]
     if params[:search]
-      @search = Search.new(min: params[:search][:min], max: params[:search][:max], category: @category, counter_height: params[:search][:counter_height], style: params[:search][:style], pieces: params[:search][:pieces])
+      @search = Search.new(min: params[:search][:min], max: params[:search][:max], category: @category, counter_height: params[:search][:counter_height], style: params[:search][:style], pieces: params[:search][:pieces], motion: params[:search][:motion])
       @products = Product.filter(@search).sort_by { |product| product.price}.reverse
     else
       @search = Search.new(min: 0, max: 5000, style: "all", counter_height: nil)

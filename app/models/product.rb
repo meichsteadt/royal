@@ -4,7 +4,8 @@ class Product < ApplicationRecord
   end
 
   def self.filter(params)
-    @products = Product.where(category: params[:category]).where("price <= ?", params[:max]).where("price >= ?", params[:min])
+    @products = Product.where(category: params[:category])
+    # .where("price <= ?", params[:max]).where("price >= ?", params[:min])
     if !params[:counter_height].nil?
       @products = @products.where(counter_height: params[:counter_height])
     end
@@ -16,6 +17,13 @@ class Product < ApplicationRecord
         @products = @products.where("pieces > ?", 1)
       else
         @products = @products.where(pieces: 1)
+      end
+    end
+    if params[:motion] != nil
+      if params[:motion] == "true"
+        @products = @products.where(motion: true)
+      else
+        @products = @products.where(motion: false)
       end
     end
     @products

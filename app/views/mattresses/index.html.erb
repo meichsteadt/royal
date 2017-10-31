@@ -1,6 +1,6 @@
 <div class="mattresses clearfix">
-  <div class="col-md-4 product-search">
-    <% render "search_form" %>
+  <div class="col-md-12 product-search">
+    <%= render "search_form" %>
   </div>
   <div class="col-md-12 brand-products">
     <div class="box clearfix">
@@ -11,7 +11,8 @@
             <div class="col-md-4 product">
               <img class="image img-responsive" src="<%= mattress.image %>" alt="">
               <div class="info">
-                <p><%= mattress.name %><span class="price"><%= number_to_currency(mattress.price) %></span></p>
+                <!-- <p><%= mattress.name %><span class="price"><%= number_to_currency(mattress.price) %></span></p> -->
+                <p><%= mattress.name %></p>
               </div>
             </div>
           <% end %>

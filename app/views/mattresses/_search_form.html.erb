@@ -2,14 +2,13 @@
   <h1>Product Search</h1>
   <%= form_for(@search) do |f| %>
     <%= f.hidden_field :category, value: "mattresses" %>
-    <div class="form-group">
+    <!-- <div class="form-group">
       <h3>Price</h3>
       <%= f.number_field :min, placeholder: "min" %>
       <p>to</p>
       <%= f.number_field :max, placeholder: "max" %>
-    </div>
-    <hr>
-    <div class="form-group">
+    </div> -->
+    <div class="col-md-3 col-md-offset-2 form-group">
       <h3>Size</h3>
       <%= f.radio_button :size, :all %>
       <%= f.label :size_all, "All Sizes" %>
@@ -24,8 +23,7 @@
       <%= f.radio_button :size, "cal_king" %>
       <%= f.label :size_cal_king, "Cal King" %>
     </div>
-    <hr>
-    <div class="form-group">
+    <div class="col-md-3 form-group">
       <h3>Features</h3>
       <%= f.radio_button :features, "all" %>
       <%= f.label :features_all, "All Features" %>
@@ -36,6 +34,8 @@
       <% f.radio_button :features, "innerspring" %>
       <% f.label :features_innerspring, "Innerspring" %>
     </div>
-    <%= f.submit "Search", class: "promo-button promo-button-sm" %>
+    <div class="col-md-2">
+      <%= f.submit "Search", class: "promo-button promo-button-sm" %>
+    </div>
   <% end %>
 </div>

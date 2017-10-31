@@ -1,6 +1,7 @@
 class Mattress < ApplicationRecord
   def self.filter(params)
-    @mattresses = Mattress.all.where("price < ?", params[:max]).where("price > ?", params[:min])
+    @mattresses = Mattress.all
+    # .where("price < ?", params[:max]).where("price > ?", params[:min])
     if params[:size] != "all"
       @mattresses = @mattresses.where("sizes @> ARRAY[?]::varchar[]", params[:size])
     end
@@ -43,6 +44,7 @@ class Mattress < ApplicationRecord
   end
 
   def show_prices
-    eval(self.price_sizes)
+    # eval(self.price_sizes)
+    []
   end
 end

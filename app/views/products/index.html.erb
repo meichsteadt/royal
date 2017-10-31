@@ -9,7 +9,7 @@
         <hr>
       </div>
 
-      <% render "search_form" %>
+      <%= render "search_form" %>
       <% if @products.length > 0 %>
         <% @products.each do |product| %>
           <% if product.description != " "%>

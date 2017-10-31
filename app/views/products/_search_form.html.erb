@@ -3,13 +3,13 @@
     <div class="row">
       <%= form_for(@search) do |f| %>
       <%= f.hidden_field :category, value: @category %>
-      <div class="form-group col-sm-3">
+      <!-- <div class="form-group col-sm-3">
         <h3>Price</h3>
         <%= f.number_field :min, placeholder: "min", class: "form-control" %>
         <p>to</p>
         <%= f.number_field :max, placeholder: "max", class: "form-control" %>
-      </div>
-      <div class="form-group col-sm-3 col-sm-offset-1">
+      </div> -->
+      <div class="form-group col-sm-3 col-sm-offset-2">
         <h3>Style</h3>
         <%= f.radio_button :style, :all %>
         <%= f.label :style_all, "All Styles" %>
@@ -40,6 +40,16 @@
           <%= f.label :pieces_1, "Bed Only" %>
           <%= f.radio_button :pieces, 2 %>
           <%= f.label :pieces_2, "Bedroom Set" %>
+        </div>
+      <% elsif @category == "seating" %>
+        <div class="form-group col-sm-3">
+          <h3>Motion</h3>
+          <%= f.radio_button :motion, nil %>
+          <%= f.label :motion, "Any" %>
+          <%= f.radio_button :motion, true %>
+          <%= f.label :motion_true, "Motion" %>
+          <%= f.radio_button :motion, false %>
+          <%= f.label :motion_false, "Stationary" %>
         </div>
       <% end %>
       <div class="col-sm-2">
