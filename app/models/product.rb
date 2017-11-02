@@ -19,8 +19,8 @@ class Product < ApplicationRecord
         @products = @products.where(pieces: 1)
       end
     end
-    if params[:motion] != nil
-      if params[:motion] == "true"
+    if !params[:motion].nil?
+      if params[:motion]
         @products = @products.where(motion: true)
       else
         @products = @products.where(motion: false)

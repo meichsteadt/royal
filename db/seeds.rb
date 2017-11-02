@@ -7,7 +7,8 @@ Brand.create!([
   {name: "New Classic", image: nil, video: nil, logo: "http://newclassicfurniture.com/wp-content/uploads/2016/09/logo-new-1.jpg", category: "furniture"},
   {name: "Gomen Furniture", image: nil, video: nil, logo: "http://static1.squarespace.com/static/53152d7fe4b05e4b3991347b/t/5318c064e4b02cc79a151e66/1462490666933/?format=500w", category: "furniture"},
   {name: "Stanford Furniture", image: nil, video: nil, logo: nil, category: "furniture"},
-  {name: "Diamond Mattress", image: nil, video: nil, logo: "", category: "mattresses"}
+  {name: "Diamond Mattress", image: nil, video: nil, logo: "", category: "mattresses"},
+  {name: "Kian USA", category: "furniture", logo: ""}
 ])
 Mattress.create!([
   {name: "Holiday Medium", manufacturer_id: nil, price: 749, features: [], image: "http://www.diamondmattress.com/Resources/ProductPhotos/Holiday%20ET_3.jpg", description: "The Dream Collection combines our 744 foam-encased, individually-wrapped coil support system and visco memory foam to help you fall asleep faster, stay asleep longer and wake up feeling refreshed. Dream Collection beds do not transfer motion between partners, allowing you to sleep throughout the night and receive deeper, more rejuvenating rest. These beds also reduce tossing and turning through the pressure-relieving support of our luxurious Eco-Flex plant-based comfort layers.", firmness: "medium", warranty_length: 20, warranty_details: nil, sizes: ["twin", "full", "queen", "king", "cal_king"], brand_id: 9, components: ["gel_foam", "pocketed_coil"], adjustable: true, price_sizes: "{:twin=>{:matt=>399, :set=>499}, :full=>{:matt=>499, :set=>599}, :queen=>{:matt=>599, :set=>749}, :king=>{:matt=>849, :set=>1049}}"},
