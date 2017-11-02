@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171031203016) do
+ActiveRecord::Schema.define(version: 20171102193243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20171031203016) do
     t.integer  "price"
     t.integer  "brand_id"
     t.boolean  "motion"
+    t.string   "images",                      array: true
   end
 
   create_table "promotions", force: :cascade do |t|

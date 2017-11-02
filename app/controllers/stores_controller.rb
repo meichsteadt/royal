@@ -4,6 +4,6 @@ class StoresController < ApplicationController
   end
 
   def show
-
+    @stores = Store.all
   end
 end

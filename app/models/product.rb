@@ -41,7 +41,7 @@ class Product < ApplicationRecord
   def get_next
     products = Product.where(category: self.category)
 
-    if self == products.last
+    if self == products[-1]
       products.first.id
     else
       i = products.index(self)
@@ -51,7 +51,7 @@ class Product < ApplicationRecord
 
   def get_prev
     products = Product.where(category: self.category)
-    if self == products.first
+    if self == products[0]
       products.last.id
     else
       i = products.index(self)
@@ -61,7 +61,7 @@ class Product < ApplicationRecord
 
   def get_nexter
     products = Product.where(category: self.category)
-    if self == products.last
+    if self == products[-1]
       products[1].id
     elsif self == products[-2]
       products[0].id
@@ -73,7 +73,7 @@ class Product < ApplicationRecord
 
   def get_nextest
     products = Product.where(category: self.category)
-    if self == products.last
+    if self == products[-1]
       products[2].id
     elsif self == products[-2]
       products[1].id

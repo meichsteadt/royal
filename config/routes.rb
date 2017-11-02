@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "/dining", to: "products#index", category: "dining"
   get "/seating", to: "products#index", category: "seating"
   get "/bedroom", to: "products#index", category: "bedroom"
+  get "/youth", to: "products#index", category: "youth"
   get "/contact", to: "stores#show"
   resources :stores
   resources :layouts
