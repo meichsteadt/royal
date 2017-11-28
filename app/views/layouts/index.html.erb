@@ -9,37 +9,17 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <div class="col-xs-4 product-slide">
-          <img class="" src="<%= @slideshow[0] %>" alt="">
-        </div>
-        <div class="col-xs-4">
-          <div class="cover"></div>
-          <div class="promo">
-            <img src="http://www.mentalhealthamerica.net/sites/default/files/styles/interior_page_banner/public/BackToSchoolHeader.png?itok=ehkyBAet" alt="" style="padding: 10px;" class="img-responsive">
-            <h3>New year, <strong>New bedroom</strong></h3>
-            <%= link_to '/bedroom' do %>
-            <button class="promo-button">Shop Now</button>
-            <% end %>
-          </div>
-        </div>
-        <div class="col-xs-4 product-slide">
-          <img class="flip" src="<%= @slideshow[1] %>" alt="">
-        </div>
+        <%= link_to "/dining" do %>
+          <%= image_tag 'holiday-savings.jpg' %>
+        <% end %>
       </div>
-      <div class="item mattress-quiz">
-      <%= link_to mattresses_path do %>
-      <h2>Find your perfect mattress in minutes</h2>
-      <button class="promo-button">Shop Mattresses</button>
-      <img class="" src="https://www.goodbed.com/media/pictures/mattresses/serta/serta-picture-30.jpg" alt="">
-      <% end %>
     </div>
-  </div>
-  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+  <!-- <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
     <span class="icon-prev"></span>
   </a>
   <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
     <span class="icon-next"></span>
-  </a>
+  </a> -->
 </div>
   <!-- Controls -->
 
