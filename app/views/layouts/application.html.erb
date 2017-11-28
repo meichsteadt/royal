@@ -20,7 +20,9 @@
     <div class="page">
       <div class="logo">
         <!-- <div class="brand"><%= link_to @store.name, '/' %></div> -->
-        <%= image_tag('logo.jpg', class: "img-responsive", id: "logo") %>
+        <%= link_to '/' do %>
+          <%= image_tag('logo.jpg', class: "img-responsive", id: "logo") %>
+        <% end %>
         <div class="address-bar" id="address"><%= @store.address %> | <%= @store.phone %></div>
         <!-- Navigation -->
         <nav class="navbar navbar-default" role="navigation">

@@ -73,7 +73,7 @@ $carouselHeight: auto;
      font-weight: 900;
      letter-spacing: 2px;
      font: inherit;
-     padding: 15px 10px;
+     padding: 15px 10px !important;
  }
 
  .navbar-nav {
@@ -781,4 +781,12 @@ th {
   width: 150%;
   background-color: #ddd;
   margin-left: -25%;
+  @media screen and (max-width: 768px) {
+    & input.email {
+      width: 70% !important;
+    }
+    & .button {
+      width: 70% !important;
+    }
+  }
 }
