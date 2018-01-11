@@ -2,11 +2,11 @@
   <ul class="pagination">
     <li>
       <% if @page_number > 1 %>
-        <a href="?<%= params.except!(:action, :controller, :page_number).to_query %>&page_number=<%= @page_number - 1 %>" aria-label="Next">
+        <a href="?<%= params.except(:action, :controller, :page_number).to_query %>&page_number=<%= @page_number - 1 %>" aria-label="Next">
           <span aria-hidden="true">&laquo;</span>
         </a>
       <% else %>
-        <a href="?<%= params.except!(:action, :controller, :page_number).to_query %>&page_number=<%= @pages %>" aria-label="Next">
+        <a href="?<%= params.except(:action, :controller, :page_number).to_query %>&page_number=<%= @pages %>" aria-label="Next">
           <span aria-hidden="true">&laquo;</span>
         </a>
       <% end %>
@@ -20,19 +20,19 @@
           <li><a>...</a></li>
         <% end %>
         <% if time + 1 == @page_number %>
-          <li class="active"><a href="?<%= params.except!(:action, :controller, :page_number).to_query %>&page_number=<%= time + 1 %>"><%= time + 1 %></a></li>
+          <li class="active"><a href="?<%= params.except(:action, :controller, :page_number).to_query %>&page_number=<%= time + 1 %>"><%= time + 1 %></a></li>
         <% else %>
-          <li><a href="?<%= params.except!(:action, :controller, :page_number).to_query %>&page_number=<%= time + 1 %>"><%= time + 1 %></a></li>
+          <li><a href="?<%= params.except(:action, :controller, :page_number).to_query %>&page_number=<%= time + 1 %>"><%= time + 1 %></a></li>
         <% end %>
       <% end %>
     <% end %>
     <li>
       <% if @page_number < @pages %>
-        <a href="?<%= params.except!(:action, :controller, :page_number).to_query %>&page_number=<%= @page_number + 1 %>" aria-label="Next">
+        <a href="?<%= params.except(:action, :controller, :page_number).to_query %>&page_number=<%= @page_number + 1 %>" aria-label="Next">
           <span aria-hidden="true">&raquo;</span>
         </a>
       <% else %>
-        <a href="?<%= params.except!(:action, :controller, :page_number).to_query %>&page_number=<%= 1 %>" aria-label="Next">
+        <a href="?<%= params.except(:action, :controller, :page_number).to_query %>&page_number=<%= 1 %>" aria-label="Next">
           <span aria-hidden="true">&raquo;</span>
         </a>
       <% end %>

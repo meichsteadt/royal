@@ -57,7 +57,7 @@ hr {
 }
 
 .navbar-collapse {
-  padding-left: 60px;
+
 }
 .featurette-image {
   width:457px;
@@ -246,8 +246,8 @@ a:hover {
   }
 
   .nav>li>a {
-    font-size: 18px;
-    padding: 15px;
+    font-size: 15px;
+    padding: 10px;
   }
 
   .navbar-nav>li>a {
@@ -272,4 +272,11 @@ footer {
   display: block;
   margin: 0 auto;
   max-width: 500px;
+}
+
+@media screen and (min-width: 921px) {
+  .nav>li>a {
+    font-size: 18px;
+    padding: 15px;
+  }
 }

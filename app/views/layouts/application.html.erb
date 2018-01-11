@@ -51,12 +51,11 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li><a href="/">Home</a></li>
-                <li><%= link_to 'Dining', '/dining', id: "nav-dining" %></li>
-                <li><%= link_to 'Living Room', '/seating', id: "nav-seating" %></li>
-                <li><%= link_to 'Bedroom', '/bedroom', id: "nav-bedroom" %></li>
-                <li><%= link_to 'Youth', '/youth', id: "nav-youth" %></li>
-                <li><%= link_to 'Mattresses', mattresses_path, id: "nav-mattresses" %></li>
+                <li><%= link_to 'Dining', '/dining', id: "nav-dining" %><span class="nav-border">|</span></li>
+                <li><%= link_to 'Living Room', '/seating', id: "nav-seating" %><span class="nav-border">|</span></li>
+                <li><%= link_to 'Bedroom', '/bedroom', id: "nav-bedroom" %><span class="nav-border">|</span></li>
+                <li><%= link_to 'Youth', '/youth', id: "nav-youth" %><span class="nav-border">|</span></li>
+                <li><%= link_to 'Mattresses', mattresses_path, id: "nav-mattresses" %><span class="nav-border">|</span></li>
                 <li><%= link_to 'Contact', '/contact', id: "nav-contact" %></li>
               </ul>
             </div>

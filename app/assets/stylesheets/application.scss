@@ -79,7 +79,7 @@ $carouselHeight: auto;
  .navbar-nav {
      text-transform: uppercase;
      font-weight: 400;
-     letter-spacing: 3px;
+     letter-spacing: 1px;
  }
 
  .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
@@ -234,6 +234,7 @@ $carouselHeight: auto;
        text-align: center;
        display: inline-block;
        float: none;
+       position: relative;
      }
 
      .nav>li>a {
@@ -274,9 +275,10 @@ $carouselHeight: auto;
      }
  }
 
- @media screen and (min-width:860px) {
+ @media screen and (min-width:769px) {
    .nav>li>a {
       font-size: 18px;
+      padding: 15px;
    }
  }
 
@@ -813,5 +815,17 @@ th {
 
   &:hover {
     color: #444;
+  }
+}
+
+.nav-border {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -7.5px;
+  @media screen and (max-width: 767px) {
+    & {
+      display: none;
+    }
   }
 }
