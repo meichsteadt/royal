@@ -430,8 +430,7 @@ $carouselHeight: auto;
  .product {
    position: relative;
    margin-bottom: 20px;
-   max-height: 360px;
-   height: 360px;
+   height: 240px;
    overflow: hidden;
    box-sizing: border-box;
    .safe-zone {
@@ -457,6 +456,7 @@ $carouselHeight: auto;
       color: #333;
       font-size: 20px;
       padding: 10px;
+      width: 90%;
       .price {
         float: right;
         margin: 0;
@@ -509,6 +509,9 @@ $carouselHeight: auto;
     height: 100%;
     width: 100%;
     z-index: -1;
+  }
+  img {
+    margin: 0 auto;
   }
 }
 
@@ -777,6 +780,8 @@ th {
   text-transform: none;
 }
 
+// ==============================================  Mailchimp Styles  ==============================================
+
 #mc_embed_signup {
   padding: 40px;
   width: 150%;
@@ -789,5 +794,24 @@ th {
     & .button {
       width: 70% !important;
     }
+  }
+}
+
+// ============================================== Pagination Styles  ==============================================
+.pagination > .active > a {
+  background-color: $teal;
+  border: 1px solid #ddd;
+  &:hover {
+    background-color: lighten($teal, 10%);
+    border: 1px solid #ddd;
+    cursor: pointer;
+  }
+}
+
+.pagination > li > a {
+  color: #333;
+
+  &:hover {
+    color: #444;
   }
 }

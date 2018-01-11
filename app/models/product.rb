@@ -84,4 +84,14 @@ class Product < ApplicationRecord
       products[i + 3].id
     end
   end
+
+  def self.read
+    file = File.read('product_output.json')
+    json = JSON.parse(file)
+    json.each do |key, value|
+      product = value['product']
+      Product.create(name: product['name'], category: product['category'], images: product['thumbnail'], image: product['thumbnail'], description: product['description'])
+    end
+    return ""
+  end
 end

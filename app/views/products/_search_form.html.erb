@@ -1,28 +1,17 @@
-<div class="col-md-12 product-search">
+<div class="col-md-2 product-search">
   <div class="clearfix">
     <div class="row">
       <%= form_for(@search) do |f| %>
       <%= f.hidden_field :category, value: @category %>
-      <!-- <div class="form-group col-sm-3">
+      <!-- <div class="form-group col-sm-12">
         <h3>Price</h3>
         <%= f.number_field :min, placeholder: "min", class: "form-control" %>
         <p>to</p>
         <%= f.number_field :max, placeholder: "max", class: "form-control" %>
       </div> -->
-      <div class="form-group col-sm-3 col-sm-offset-2">
-        <h3>Style</h3>
-        <%= f.radio_button :style, :all %>
-        <%= f.label :style_all, "All Styles" %>
-        <%= f.radio_button :style, :traditional %>
-        <%= f.label :style_traditional, "Traditional" %>
-        <%= f.radio_button :style, "contemporary" %>
-        <%= f.label :style_contemporary, "Contemporary" %>
-        <%= f.radio_button :style, "rustic" %>
-        <%= f.label :style_rustic, "Rustic" %>
-      </div>
 
       <% if @category == "dining" %>
-        <div class="form-group col-sm-3">
+        <div class="form-group col-sm-12">
           <h3>Height</h3>
           <%= f.radio_button :counter_height, nil %>
           <%= f.label :counter_height, "Any" %>
@@ -32,7 +21,7 @@
           <%= f.label :counter_height_true, "Counter Height" %>
         </div>
       <% elsif @category == "bedroom" %>
-        <div class="form-group col-sm-3">
+        <div class="form-group col-sm-12">
           <h3>Number of Pieces</h3>
           <%= f.radio_button :pieces, nil %>
           <%= f.label :pieces, "Any" %>
@@ -42,7 +31,7 @@
           <%= f.label :pieces_2, "Bedroom Set" %>
         </div>
       <% elsif @category == "seating" %>
-        <div class="form-group col-sm-3">
+        <div class="form-group col-sm-12">
           <h3>Motion</h3>
           <%= f.radio_button :motion, nil %>
           <%= f.label :motion, "Any" %>
@@ -52,10 +41,8 @@
           <%= f.label :motion_false, "Stationary" %>
         </div>
       <% end %>
-      <div class="col-sm-2">
-        <div>
-          <%= f.submit "Search", class: "promo-button promo-button-sm search-button" %>
-        </div>
+      <div class="col-sm-12 text-center">
+        <%= f.submit "Go", class: "promo-button promo-button-sm search-button", style: "width: 100%;" %>
       </div>
       <% end %>
     </div>

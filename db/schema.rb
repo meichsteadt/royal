@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171121223037) do
+ActiveRecord::Schema.define(version: 20180103045436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,6 +100,8 @@ ActiveRecord::Schema.define(version: 20171121223037) do
     t.boolean "sofa_love"
     t.string  "category"
     t.boolean "motion"
+    t.string  "search_input"
+    t.string  "page_number"
   end
 
   create_table "stores", force: :cascade do |t|

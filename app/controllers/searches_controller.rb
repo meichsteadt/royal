@@ -1,7 +1,7 @@
 class SearchesController < ApplicationController
   def create
     @search = Search.new(search_params)
-    redirect_to paths(@search.category)
+    redirect_to paths(@search.category, @search.page_number)
   end
 
 private
@@ -15,20 +15,20 @@ private
     if params[:search][:motion] == "on"
       params[:search][:motion] = nil
     end
-    params.require(:search).permit(:min, :max, :size, :features, :category, :pieces, :style, :counter_height, :sectional, :sofa_love, :motion)
+    params.require(:search).permit(:min, :max, :size, :features, :category, :pieces, :style, :counter_height, :sectional, :sofa_love, :motion, :page_number, :search_input)
   end
 
-  def paths(category)
+  def paths(category, page_number = 1)
     if params[:id]
-      return brand_path(params[:id], search: search_params)
+      return brand_path(params[:id], search: search_params, page_number: page_number)
     elsif category == "mattresses"
-      return mattresses_path(search: search_params)
+      return mattresses_path(search: search_params, page_number: page_number)
     elsif category == "dining"
-      return dining_path(search: search_params)
+      return dining_path(search: search_params, page_number: page_number)
     elsif category == "seating"
-      return seating_path(search: search_params)
+      return seating_path(search: search_params, page_number: page_number)
     elsif category == "bedroom"
-      return bedroom_path(search: search_params)
+      return bedroom_path(search: search_params, page_number: page_number)
     end
   end
 end
