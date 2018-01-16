@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :products
+  get 'sitemap.xml', :to => 'sitemap#show', :defaults => {:format => 'xml'}
   get "/dining", to: "products#index", category: "dining"
   get "/seating", to: "products#index", category: "seating"
   get "/bedroom", to: "products#index", category: "bedroom"
