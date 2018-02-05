@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180103045436) do
+ActiveRecord::Schema.define(version: 20180205221633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,13 @@ ActiveRecord::Schema.define(version: 20180103045436) do
     t.string   "category"
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.string   "parent_category"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "emails", force: :cascade do |t|
     t.string   "email"
     t.string   "name"
@@ -45,7 +52,6 @@ ActiveRecord::Schema.define(version: 20180103045436) do
 
   create_table "mattresses", force: :cascade do |t|
     t.string   "name"
-    t.integer  "manufacturer_id"
     t.integer  "price"
     t.string   "features",         default: [],              array: true
     t.string   "image"
@@ -62,22 +68,25 @@ ActiveRecord::Schema.define(version: 20180103045436) do
     t.string   "price_sizes"
   end
 
+  create_table "product_categories", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string   "name"
-    t.string   "category"
     t.string   "description"
-    t.string   "image"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.integer  "pieces"
-    t.string   "style"
-    t.boolean  "counter_height"
-    t.boolean  "sectional"
-    t.boolean  "sofa_love"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "price"
     t.integer  "brand_id"
-    t.boolean  "motion"
-    t.string   "images",                      array: true
+    t.string   "images",                   array: true
+    t.string   "thumbnail"
+    t.string   "number"
+    t.string   "dimensions"
+    t.string   "brand"
   end
 
   create_table "promotions", force: :cascade do |t|
