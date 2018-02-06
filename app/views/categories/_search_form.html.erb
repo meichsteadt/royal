@@ -1,0 +1,14 @@
+<div class="col-md-2 product-search">
+  <div class="clearfix">
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>Categories</h3>
+        <ul class="nav nav-pills nav-stacked">
+          <% @categories.all.each do |category| %>
+            <li role="presentation"><%= link_to category.name, category_path(category) %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

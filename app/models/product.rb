@@ -40,52 +40,11 @@ class Product < ApplicationRecord
     end
   end
 
-  def get_next
-    products = Product.where(category: self.category)
-
-    if self == products[-1]
-      products.first.id
-    else
-      i = products.index(self)
-      products[i + 1].id
-    end
+  def get_recommended_items
+    
   end
 
-  def get_prev
-    products = Product.where(category: self.category)
-    if self == products[0]
-      products.last.id
-    else
-      i = products.index(self)
-      products[i - 1].id
-    end
-  end
 
-  def get_nexter
-    products = Product.where(category: self.category)
-    if self == products[-1]
-      products[1].id
-    elsif self == products[-2]
-      products[0].id
-    else
-      i = products.index(self)
-      products[i + 2].id
-    end
-  end
-
-  def get_nextest
-    products = Product.where(category: self.category)
-    if self == products[-1]
-      products[2].id
-    elsif self == products[-2]
-      products[1].id
-    elsif self == products[-3]
-      products[0].id
-    else
-      i = products.index(self)
-      products[i + 3].id
-    end
-  end
 
   def self.read
     file = File.read('product_output.json')

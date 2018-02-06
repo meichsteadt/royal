@@ -2909,7 +2909,6 @@ ProductCategory.create!([
   {id: 3431, category_id: 7, product_id: 1788, created_at: "2018-01-30 20:38:49", updated_at: "2018-01-30 20:38:49"},
   {id: 3434, category_id: 7, product_id: 1790, created_at: "2018-01-30 20:39:00", updated_at: "2018-01-30 20:39:00"}
 ])
-
 Category.create!([
   {id: 1, name: "Dining Sets", parent_category: "dining", created_at: "2018-01-16 05:02:16", updated_at: "2018-01-16 05:02:16"},
   {id: 2, name: "Counter Height Dining Sets", parent_category: "dining", created_at: "2018-01-16 05:02:16", updated_at: "2018-01-16 05:02:16"},

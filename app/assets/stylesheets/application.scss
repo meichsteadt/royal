@@ -230,7 +230,7 @@ $carouselHeight: auto;
        text-align: center;
      }
 
-     .nav>li {
+     .navbar-nav >li {
        text-align: center;
        display: inline-block;
        float: none;
@@ -828,4 +828,8 @@ th {
       display: none;
     }
   }
+}
+
+.nav-pills > li.active > a {
+  background-color: $teal;
 }

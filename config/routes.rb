@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   resources :quiz
   resources :brands
   resources :searches
+  resources :categories do
+    resources :products
+  end
   get '/brands/:id/:search', to: "brands#show"
   root "layouts#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
